@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PagePlatziSample.Views.Layouts.UI.StylesChallenge"
+             Title="StylesChallenge">
+    <!--#region Styles-->
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="IconsPosition" TargetType="Image">
+                <Setter Property="VerticalOptions" Value="Start"/>
+                <Setter Property="HorizontalOptions" Value="End"/>
+            </Style>
+
+            <Style x:Key="IntryourExtractFontStyle" TargetType="Label">
+                <Setter Property="FontFamily" Value="RobotoMedium"/>
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="TextColor" Value="#7b8389"/>
+            </Style>
+
+            <Style x:Key="ButtonsBookFollStyle" TargetType="Button">
+                <Setter Property="Padding" Value="14"/>
+                <Setter Property="FontFamily" Value="RobotoMedium"/>
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="Grid.Row" Value="0"/>
+            </Style>
+
+            <Style x:Key="TitleStuConFolFontStyle" TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="FontFamily" Value="RobotoMedium"/>
+                <Setter Property="FontSize" Value="12"/>
+                <Setter Property="TextColor" Value="#7b8389"/>
+            </Style>
+
+            <Style x:Key="ContentStuConFolFontStyle" TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="FontFamily" Value="RobotoBold"/>
+                <Setter Property="FontSize" Value="22"/>
+                <Setter Property="TextColor" Value="#272932"/>
+            </Style>
+
+            <Style x:Key="VerticalLineStCoFoStyle" TargetType="Label">
+                <Setter Property="FontFamily" Value="RobotoThin"/>
+                <Setter Property="FontSize" Value="30"/>
+                <Setter Property="TextColor" Value="#e4e5e8"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="VerticalOptions" Value="Start"/>
+            </Style>
+
+            <Style x:Key="NotPressButtonStyle" TargetType="Button">
+                <Setter Property="FontFamily" Value="RobotoBold"/>
+                <Setter Property="FontSize" Value="12"/>
+                <Setter Property="BackgroundColor" Value="Transparent"/>
+                <Setter Property="TextColor" Value="#7b8389"/>
+                <Setter Property="Padding" Value="0,10"/>
+                <Setter Property="CornerRadius" Value="10"/>
+            </Style>
+
+            <Style x:Key="FlexLayoutCard" TargetType="FlexLayout">
+                <Setter Property="Direction" Value="Row"/>
+                <Setter Property="AlignItems" Value="End"/>
+                <Setter Property="JustifyContent" Value="Start"/>
+            </Style>
+
+            <Style x:Key="PrincipalTextColorCard" TargetType="Label">
+                <Setter Property="TextColor" Value="#272932"/>
+                <Setter Property="FontFamily" Value="RobotoBold"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <!--#endregion-->
+
+    <ScrollView BackgroundColor="#EEEBE3">
+        <Frame CornerRadius="20"
+               BackgroundColor="#FBFBFB"
+               BorderColor="Transparent"
+               Margin="20"
+               Padding="20,25,20,40">
+            <Grid ColumnDefinitions="*,*,*"
+                  RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto"
+                  RowSpacing="4"
+                  ColumnSpacing="0">
+                <!--#region Row0: Image, Icon & Close Icon-->
+                <AbsoluteLayout Grid.Column="0"
+                                Grid.Row="0"
+                                Grid.ColumnSpan="2">
+                    <Frame MaximumWidthRequest="120"
+                           IsClippedToBounds="True"
+                           Padding="0"
+                           BorderColor="Transparent"
+                           Margin="0,15">
+                        <Image Source="artist"/>
+                    </Frame>
+                    <Image Source="verified_account_90"
+                           AbsoluteLayout.LayoutBounds="0.56,0,44,44"
+                           AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                </AbsoluteLayout>
+                <Image Grid.Column="2"
+                       Grid.Row="0"
+                       Source="close_90"
+                       MaximumWidthRequest="18"
+                       Margin="0,15,0,0"
+                       Style="{StaticResource IconsPosition}"/>
+                <!--#endregion-->
+                <!--#region Row1,2,3: Title, Introduce yourself & Extract-->
+                <Label Grid.Column="0"
+                       Grid.Row="1"
+                       Grid.ColumnSpan="3"
+                       Text="Andrade J."
+                       FontFamily="RobotoBlack"
+                       FontSize="30"
+                       TextColor="#272932"/>
+                <FlexLayout Grid.Column="0"
+                            Grid.Row="2"
+                            Grid.ColumnSpan="3"
+                            Direction="Row"
+                            AlignItems="Start"
+                            Wrap="Wrap">
+                    <Label Text="Software Engineer at"
+                           Style="{StaticResource IntryourExtractFontStyle}"/>
+                    <Label Text="@jandrades"
+                           FontFamily="RobotoMedium"
+                           FontSize="16"
+                           TextColor="#272932"
+                           Margin="2,0,0,0"/>
+                </FlexLayout>
+                <Label Text="A developer that keens simplicity and usability."
+                       Grid.Column="0"
+                       Grid.Row="3"
+                       Grid.ColumnSpan="3"
+                       Style="{StaticResource IntryourExtractFontStyle}"/>
+                <!--#endregion-->
+                <!--#region Row4: Buttons Book & Follow-->
+                <Grid Grid.Column="0"
+                      Grid.Row="4"
+                      Grid.ColumnSpan="3"
+                      ColumnDefinitions="*,*,*"
+                      RowDefinitions="Auto"
+                      ColumnSpacing="12"
+                      Margin="0,20,0,20">
+                    <Button Text="Book Class | $1,300.00"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="2"
+                            BackgroundColor="#1e56c3"
+                            TextColor="#ffffff"
+                            Style="{StaticResource ButtonsBookFollStyle}"/>
+                    <Button Text="Follow"
+                            Grid.Column="2"
+                            BackgroundColor="#e7e8e9"
+                            TextColor="#272932"
+                            Style="{StaticResource ButtonsBookFollStyle}"/>
+                </Grid>
+                <!--#endregion-->
+                <!--#region Row5: Students, Content & Followers-->
+                <Grid Grid.Column="0"
+                      Grid.Row="5"
+                      Grid.ColumnSpan="3"
+                      ColumnDefinitions="*,Auto,*,Auto,*"
+                      RowDefinitions="Auto">
+                    <VerticalStackLayout HorizontalOptions="Fill"
+                                         VerticalOptions="Fill"
+                                         Grid.Column="0"
+                                         Grid.Row="0">
+                        <Label Text="Students"
+                               Style="{StaticResource TitleStuConFolFontStyle}"/>
+                        <Label Text="35,789"
+                               Style="{StaticResource ContentStuConFolFontStyle}"/>
+                    </VerticalStackLayout>
+                    <Label Text="|"
+                           Grid.Column="1"
+                           Grid.Row="0"
+                           Style="{StaticResource VerticalLineStCoFoStyle}"/>
+                    <VerticalStackLayout HorizontalOptions="Fill"
+                                         VerticalOptions="Fill"
+                                         Grid.Column="2"
+                                         Grid.Row="0">
+                        <Label Text="Content"
+                               Style="{StaticResource TitleStuConFolFontStyle}"/>
+                        <Label Text="3,648"
+                               Style="{StaticResource ContentStuConFolFontStyle}"/>
+                    </VerticalStackLayout>
+                    <Label Text="|"
+                           Grid.Column="3"
+                           Grid.Row="0"
+                           Style="{StaticResource VerticalLineStCoFoStyle}"/>
+                    <VerticalStackLayout HorizontalOptions="Fill"
+                                         VerticalOptions="Fill"
+                                         Grid.Column="4"
+                                         Grid.Row="0">
+                        <Label Text="Followers"
+                               Style="{StaticResource TitleStuConFolFontStyle}"/>
+                        <Label Text="3,6m"
+                               Style="{StaticResource ContentStuConFolFontStyle}"/>
+                    </VerticalStackLayout>
+                </Grid>
+                <!--#endregion-->
+                <!--#region Row6: Buttons Courses, Source files & Discussion-->
+                <Frame Grid.Column="0"
+                       Grid.Row="6"
+                       Grid.ColumnSpan="3"
+                       Padding="0"
+                       CornerRadius="10"
+                       BackgroundColor="#f7f7f7"
+                       BorderColor="Transparent"
+                       Margin="0,30,0,20">
+                    <Grid ColumnDefinitions="*,*,*"
+                          RowDefinitions="Auto">
+                        <Button Text="Courses"
+                                Grid.Column="0"
+                                Grid.Row="0"
+                                BackgroundColor="#ffffff"
+                                FontFamily="RobotoBold"
+                                FontSize="12"
+                                TextColor="#272932"
+                                Padding="0,10"
+                                CornerRadius="10"
+                                Margin="6,6,0,6">
+                            <Button.Shadow>
+                                <Shadow Brush="#272932"
+                                        Offset="6,6"
+                                        Radius="14"
+                                        Opacity="0.06"/>
+                            </Button.Shadow>
+                        </Button>
+                        <Button Text="Source files"
+                                Grid.Column="1"
+                                Grid.Row="0"
+                                Margin="0,6,0,6"
+                                Style="{StaticResource NotPressButtonStyle}"/>
+                        <Button Text="Discussion"
+                                Grid.Column="2"
+                                Grid.Row="0"
+                                Margin="0,6,6,6"
+                                Style="{StaticResource NotPressButtonStyle}"/>
+                    </Grid>
+                </Frame>
+                <!--#endregion-->
+                <!--#region Row7: Card-->
+                <Frame Grid.Column="0"
+                       Grid.Row="7"
+                       Grid.ColumnSpan="3"
+                       BackgroundColor="#ecdcf4"
+                       Padding="26"
+                       CornerRadius="30"
+                       BorderColor="Transparent">
+                    <Grid ColumnDefinitions="*,30"
+                          RowDefinitions="Auto,Auto,Auto,Auto,Auto"
+                          ColumnSpacing="12">
+                        <Label Text="Become a UX Designer"
+                               Grid.Column="0"
+                               Grid.Row="0"
+                               FontSize="18"
+                               Style="{StaticResource PrincipalTextColorCard}"/>
+                        <Image Source="favorite_90"
+                               MaximumWidthRequest="22"
+                               Grid.Column="1"
+                               Grid.Row="0"
+                               Style="{StaticResource IconsPosition}"/>
+                        <Label Text="Learn the skills &amp; get the Job"
+                               Grid.Column="0"
+                               Grid.Row="1"
+                               FontFamily="RobotoMedium"
+                               FontSize="12"
+                               TextColor="#625f6c"/>
+                        <Label Text="/   /   /   /   /"
+                               Grid.Column="0"
+                               Grid.Row="3"
+                               FontSize="20"
+                               FontAttributes="Italic"
+                               Margin="0,20,0,30"
+                               Style="{StaticResource PrincipalTextColorCard}"/>
+                        <FlexLayout Grid.Column="0"
+                                    Grid.Row="4"
+                                    Wrap="Wrap"
+                                    Style="{StaticResource FlexLayoutCard}">
+                            <Label Text="4.85"
+                                   FontSize="40"
+                                   Margin="0,0,0,-4"
+                                   Style="{StaticResource PrincipalTextColorCard}"/>
+                            <Image Source="hand_drawn_star_90"
+                                   MaximumWidthRequest="10"
+                                   Margin="2,0,2,2"
+                                   Style="{StaticResource IconsPosition}"/>
+                            <Label Text="ratings"
+                                   FontSize="16"
+                                   Style="{StaticResource PrincipalTextColorCard}"/>
+                        </FlexLayout>
+                        <FlexLayout Grid.Column="1"
+                                    Grid.Row="4"
+                                    Margin="0,0,0,4"
+                                    Wrap="NoWrap"
+                                    Style="{StaticResource FlexLayoutCard}">
+                            <Label Text="48"
+                                   Grid.Column="1"
+                                   Grid.Row="4"
+                                   FontSize="16"
+                                   Style="{StaticResource PrincipalTextColorCard}"/>
+                            <Label Text="h"
+                                   Grid.Column="1"
+                                   Grid.Row="4"
+                                   FontSize="12"
+                                   Margin="0,0,0,0.6"
+                                   Style="{StaticResource PrincipalTextColorCard}"/>
+                        </FlexLayout>
+                    </Grid>
+                </Frame>
+                <!--#endregion-->
+            </Grid>
+        </Frame>
+    </ScrollView>
+</ContentPage>

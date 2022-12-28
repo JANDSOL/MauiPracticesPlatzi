@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PagePlatziSample.Views.Layouts.Grid.GridLayoutChallenge"
+             Title="GridLayoutChallenge">
+    <VerticalStackLayout HorizontalOptions="Center"
+                         BackgroundColor="#8c98b1">
+        <Frame Margin="20"
+               CornerRadius="20"
+               BackgroundColor="White">
+            <!--Grid-->
+            <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto">
+                <Frame WidthRequest="106"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       Grid.RowSpan="3"
+                       IsClippedToBounds="True"
+                       Padding="0"
+                       Margin="0,0,16,0"
+                       BorderColor="Transparent"
+                       VerticalOptions="Center">
+                    <Image Source="my_photo" Aspect="AspectFit"/>
+                </Frame>
+                <!--#region Labels: extract of profile-->
+                <Label Grid.Row="0"
+                       Grid.Column="1"
+                       Text="Juan Andrade"
+                       FontFamily="RobotoMedium"
+                       FontSize="18"/>
+                <Label Grid.Row="1"
+                       Grid.Column="1"
+                       Text="Software Engineer"
+                       FontFamily="RobotoMedium"
+                       FontSize="18"
+                       TextColor="Gray"/>
+                <!--#endregion-->
+                <!--#region Follower Board-->
+                <Frame Grid.Row="2"
+                       Grid.Column="1"
+                       BackgroundColor="#f2f6fc"
+                       BorderColor="Transparent"
+                       HeightRequest="70"
+                       Margin="0,10">
+                    <Grid RowDefinitions="*,*"
+                          ColumnDefinitions="*,*,*"
+                          ColumnSpacing="4">
+                        <Label Grid.Row="0"
+                               Grid.Column="0"
+                               Text="Articles"
+                               Style="{StaticResource TitleStyle}"/>
+                        <Label Grid.Row="1"
+                               Grid.Column="0"
+                               Text="34"
+                               FontFamily="RobotoMedium"
+                               FontSize="14"
+                               FontAttributes="Bold"
+                               HorizontalOptions="Center"/>
+                        <Label Grid.Row="0"
+                               Grid.Column="1"
+                               Text="Followers"
+                               Style="{StaticResource TitleStyle}"/>
+                        <Label Grid.Row="1"
+                               Grid.Column="1"
+                               Text="980"
+                               FontFamily="RobotoMedium"
+                               FontSize="14"
+                               FontAttributes="Bold"
+                               HorizontalOptions="Center"/>
+                        <Label Grid.Row="0"
+                               Grid.Column="2"
+                               Text="Rating"
+                               Style="{StaticResource TitleStyle}"/>
+                        <Label Grid.Row="1"
+                               Grid.Column="2"
+                               Text="500"
+                               FontFamily="RobotoMedium"
+                               FontSize="14"
+                               FontAttributes="Bold"
+                               HorizontalOptions="Center"/>
+                    </Grid>
+                </Frame>
+                <!--#endregion-->
+                <!--#region Buttons-->
+                <Button Grid.Column="0"
+                        Grid.Row="3"
+                        BackgroundColor="White"
+                        BorderColor="#d4d9d9"
+                        TextColor="#79838d"
+                        BorderWidth="1"
+                        HeightRequest="50"
+                        Margin="0,0,-20,0"
+                        Text="Chat"
+                        FontFamily="RobotoMedium"
+                        FontAttributes="Bold"/>
+                <Button Grid.Column="1"
+                        Grid.Row="3"
+                        BackgroundColor="#673AB7"
+                        BorderColor="Transparent"
+                        TextColor="White"
+                        BorderWidth="1"
+                        HeightRequest="50"
+                        Margin="35,0,0,0"
+                        Text="Follow"
+                        FontFamily="RobotoMedium"
+                        FontAttributes="Bold"/>
+                <!--#endregion-->
+            </Grid>
+        </Frame>
+    </VerticalStackLayout>
+    <!--<Grid ColumnDefinitions="*,*,*"
+          RowDefinitions="*,*,*,*,*,*"
+          ColumnSpacing="6"
+          RowSpacing="6"
+          Margin="6">
+        <Button Grid.Column="0"
+                Grid.Row="0"
+                Grid.ColumnSpan="2"
+                Grid.RowSpan="2"
+                BorderColor="Transparent"
+                BackgroundColor="#9DDBFE"
+                CornerRadius="0"/>
+        <Button Grid.Column="2"
+                Grid.Row="0"
+                BorderColor="Transparent"
+                BackgroundColor="#DCDCFD"
+                CornerRadius="0"/>
+        <Button Grid.Column="2"
+                Grid.Row="1"
+                BorderColor="Transparent"
+                BackgroundColor="#DCDCFD"
+                CornerRadius="0"/>
+        <Button Grid.Column="0"
+                Grid.Row="2"
+                Grid.ColumnSpan="2"
+                BorderColor="Transparent"
+                BackgroundColor="#FAA4ED"
+                CornerRadius="0"/>
+        <Button Grid.Column="2"
+                Grid.Row="2"
+                BorderColor="Transparent"
+                BackgroundColor="#FAA4ED"
+                CornerRadius="0"/>
+        <Button Grid.Column="0"
+                Grid.Row="3"
+                BorderColor="Transparent"
+                BackgroundColor="#DCDCFD"
+                CornerRadius="0"/>
+        <Button Grid.Column="1"
+                Grid.Row="3"
+                Grid.ColumnSpan="2"
+                BorderColor="Transparent"
+                BackgroundColor="#DCDCFD"
+                CornerRadius="0"/>
+        <Button Grid.Column="0"
+                Grid.Row="4"
+                BorderColor="Transparent"
+                BackgroundColor="#9DDBFE"
+                CornerRadius="0"/>
+        <Button Grid.Column="1"
+                Grid.Row="4"
+                BorderColor="Transparent"
+                BackgroundColor="#9DDBFE"
+                CornerRadius="0"/>
+        <Button Grid.Column="2"
+                Grid.Row="4"
+                BorderColor="Transparent"
+                BackgroundColor="#9DDBFE"
+                CornerRadius="0"/>
+        <Button Grid.Column="0"
+                Grid.Row="5"
+                Grid.ColumnSpan="3"
+                BorderColor="Transparent"
+                BackgroundColor="#FAA4ED"
+                CornerRadius="0"/>
+    </Grid>-->
+</ContentPage>
